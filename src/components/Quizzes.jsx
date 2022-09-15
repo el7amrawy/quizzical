@@ -1,0 +1,1 @@
+const Quizzes = (props) => {};

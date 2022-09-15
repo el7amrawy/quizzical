@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: #f5f7fb;
+}
+:root {
+  --prim-color: #4d5b9e;
+  --text-color: #293264;
+}
+
+/* ==================== Start ==================== */
+.start {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.start > div {
+  text-align: center;
+  color: var(--text-color);
+}
+.start > div h2 {
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 37px;
+  padding: 7px;
+}
+.start > div h4 {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 19px;
+}
+.start > div button {
+  width: 193px;
+  height: 52px;
+  background: var(--prim-color);
+  border: 0;
+  border-radius: 15px;
+  color: white;
+  margin: 30px 0;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 19px;
+  transition: 0.1s all ease-in-out;
+}
+.start > div button:hover {
+  background: #5764a4;
+}
+
+/* ==================== quizes ==================== */
