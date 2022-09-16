@@ -1,4 +1,6 @@
+import { nanoid } from "nanoid";
 import { useState, useEffect } from "react";
+import Question from "./components/Question";
 import Start from "./components/Start";
 
 const App = () => {
@@ -16,17 +18,27 @@ const App = () => {
       );
       const data = await response.json();
       setQuizzes(data.results);
-      console.log(quizzes);
+      // console.log(quizzes);
     })();
   }, [start]);
 
   /* =========   ========= */
 
-  const quizzesElems = quizzes.map((quiz) => {
-    return <div>{quiz.question}</div>;
-  });
+  const quizzesElems = quizzes.map((quiz) => (
+    <Question key={nanoid()} quiz={quiz} />
+  ));
 
-  return <>{start ? <Start setStart={setStart} /> : quizzesElems}</>;
+  return (
+    <>
+      {start ? (
+        <Start setStart={setStart} />
+      ) : (
+        <section className="quizzes">
+          <div className="questions">{quizzesElems}</div>
+        </section>
+      )}
+    </>
+  );
 };
 
 export default App;

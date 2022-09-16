@@ -17,6 +17,9 @@ body {
 }
 
 /* ==================== Start ==================== */
+section {
+  height: 100vh;
+}
 .start {
   display: flex;
   height: 100vh;
@@ -58,3 +61,18 @@ body {
 }
 
 /* ==================== quizes ==================== */
+.quizzes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.quizzes .questions {
+}
+.quizzes .questions .question {
+}
+.quizzes .questions .question h2 {
+}
+.quizzes .questions .question .answers {
+}
+.quizzes .questions .question .answers label {
+}
