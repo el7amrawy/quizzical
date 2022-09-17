@@ -65,7 +65,7 @@ const App = () => {
 
   return (
     <>
-      {start && !submit ? (
+      {start ? (
         <Start setStart={setStart} />
       ) : (
         <>
