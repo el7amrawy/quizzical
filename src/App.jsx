@@ -8,25 +8,43 @@ const App = () => {
 
   const [start, setStart] = useState(true);
   const [quizzes, setQuizzes] = useState([]);
+  const [answers, setAnswers] = useState([]);
+  const [win, setWin] = useState(false);
+  // const [pop, setPop] = useState(false);
 
   /* =========  Effects ========= */
 
   useEffect(() => {
     (async () => {
       const response = await fetch(
-        "https://opentdb.com/api.php?amount=5&difficulty=easy&type=multiple"
+        "https://opentdb.com/api.php?amount=5&category=21&difficulty=easy&type=multiple"
       );
       const data = await response.json();
       setQuizzes(data.results);
-      // console.log(quizzes);
     })();
   }, [start]);
 
+  /* ========= functions ========= */
+  // const correctAnswers = (quizzes) =>
+  //   quizzes.map((quiz) => quiz.correct_answer);
+  function btnHandler(ev) {
+    ev.preventDefault();
+  }
+
   /* =========   ========= */
 
-  const quizzesElems = quizzes.map((quiz) => (
-    <Question key={nanoid()} quiz={quiz} />
-  ));
+  const quizzesElems = quizzes.map((quiz, i) => {
+    return (
+      <Question
+        key={nanoid()}
+        quiz={quiz}
+        id={`q${i}`}
+        setAnswers={setAnswers}
+        i={i}
+        answer={answers}
+      />
+    );
+  });
 
   return (
     <>
@@ -35,8 +53,14 @@ const App = () => {
       ) : (
         <section className="quizzes">
           <div className="questions">{quizzesElems}</div>
+          <button onClick={btnHandler}>Check answers</button>
         </section>
       )}
+      {/* {pop && (
+        <div className="pop" onClick={() => setPop(false)}>
+          <div>Please answer all questions</div>
+        </div>
+      )} */}
     </>
   );
 };

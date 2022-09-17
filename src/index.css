@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@200;300;400;500;600&display=swap");
 *,
 *::before,
 *::after {
@@ -8,7 +8,7 @@
 }
 
 body {
-  font-family: "Inter", sans-serif;
+  font-family: "Karla", sans-serif;
   background: #f5f7fb;
 }
 :root {
@@ -18,7 +18,7 @@ body {
 
 /* ==================== Start ==================== */
 section {
-  height: 100vh;
+  /* height: 100vh; */
 }
 .start {
   display: flex;
@@ -65,14 +65,91 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 25px;
 }
 .quizzes .questions {
+  /* margin: 15px; */
+  max-width: 70vw;
 }
 .quizzes .questions .question {
+  border-bottom: 1px solid #dbdef0;
+  margin: 15px;
+  padding: 10px 0 15px;
 }
 .quizzes .questions .question h2 {
+  font-weight: 700;
+  font-size: 1.1rem;
+  line-height: 19px;
+  color: var(--text-color);
+  margin-bottom: 15px;
 }
 .quizzes .questions .question .answers {
 }
 .quizzes .questions .question .answers label {
+  display: inline-block;
+  border: 0.8px solid var(--prim-color);
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 12px;
+  color: var(--text-color);
+  padding: 10px 20px;
+  cursor: pointer;
+  margin: 10px 10px 10px 0;
+  transition: 0.1s all ease-in-out;
+}
+.quizzes .questions .question .answers label:hover {
+  background: #d6dbf5;
+}
+/* .quizzes .questions .question .answers label:active {
+  box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
+} */
+.quizzes .questions .question .answers label.selected {
+  background: #d6dbf5;
+}
+.quizzes .questions .question .answers label.right {
+  background: #94d7a2;
+  border: 0;
+}
+.quizzes .questions .question .answers label.wrong {
+  background: #f8bcbc;
+  color: #293264;
+  border: 0;
+}
+
+.quizzes > button {
+  background: #4d5b9e;
+  padding: 15px 20px;
+  border: 0;
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 12px;
+  color: #f5f7fb;
+  cursor: pointer;
+  margin: 20px;
+}
+
+.quizzes > button:active {
+  box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
+}
+/* ==================== pop ==================== */
+.pop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #d6dbf55a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pop > div {
+  background: white;
+  padding: 40px;
+  font-size: 1.3rem;
+  color: red;
+  border-radius: 8px;
+  font-weight: 600;
 }
